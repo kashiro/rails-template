@@ -1,0 +1,3 @@
+## WEB SERVER
+# web: bundle exec unicorn -p $PORT -E development -c config/unicorn.rb
+# web: bundle exec rails server -p $PORT -E development
