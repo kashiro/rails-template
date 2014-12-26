@@ -25,3 +25,9 @@ development / test
 ```bash
 foreman start -f Procfile.dev
 ```
+
+# Reference
+
+* http://www.rubydoc.info/github/wycats/thor/Thor/Actions#gsub_file-instance_method
+* https://github.com/RailsApps/rails-composer/blob/master/composer.rb
+* http://guides.rubyonrails.org/rails_application_templates.html
