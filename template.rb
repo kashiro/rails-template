@@ -43,25 +43,6 @@ if @use_same_db then
 end
 
 gem_group :production do
-  use_db use_db_name_in_prod, "PostgreSQL"
-  use_db use_db_name_in_prod, "mysql"
-end
-
-gem_group :test, :development do
-  gem "rspec-rails"
-  gem "factory_girl_rails"
-  gem "capybara" if use_capybara
-
-  if use_capybara_webkit then
-	  gem "capybara-webkit"
-	  gem "database_cleaner"
-  end
-
-  use_db use_db_name_in_dev, "sqlite"
-  use_db use_db_name_in_dev, "mysql"
-end
-
-gem_group :production do
   if use_db_name_in_prod == "PostgreSQL" then
     gem "pg"
   elsif use_db_name_in_prod == "mysql" then
