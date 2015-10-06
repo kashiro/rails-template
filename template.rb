@@ -61,33 +61,30 @@ gem_group :test, :development do
   use_db use_db_name_in_dev, "mysql"
 end
 
+gem_group :production do
+  if use_db_name_in_prod == "PostgreSQL" then
+    gem "pg"
+  elsif use_db_name_in_prod == "mysql" then
+	  gem "mysql"
+  end
+end
 
-# gem_group :production do
-#   if use_db_name_in_prod == "PostgreSQL" then
-#     gem "pg"
-#   elsif use_db_name_in_prod == "mysql" then
-# 	  gem "mysql"
-#   end
-# end
-#
-# gem_group :test, :development do
-#   gem "rspec-rails"
-#   gem "factory_girl_rails"
-#   gem "capybara" if use_capybara
-#
-#   if use_capybara_webkit then
-# 	  gem "capybara-webkit"
-# 	  gem "database_cleaner"
-#   end
-#
-#   if use_db_name_in_dev == "sqlite" then
-#     gem "sqlite3"
-#   elsif use_db_name_in_dev == "mysql" then
-# 	  gem "mysql"
-#   end
-# end
+gem_group :test, :development do
+  gem "rspec-rails"
+  gem "factory_girl_rails"
+  gem "capybara" if use_capybara
 
-exit
+  if use_capybara_webkit then
+	  gem "capybara-webkit"
+	  gem "database_cleaner"
+  end
+
+  if use_db_name_in_dev == "sqlite" then
+    gem "sqlite3"
+  elsif use_db_name_in_dev == "mysql" then
+	  gem "mysql"
+  end
+end
 
 # >---------------------------- install -----------------------------<
 run "bundle install --without production"
