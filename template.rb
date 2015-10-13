@@ -34,6 +34,7 @@ def use_db(selected, name)
 end
 
 uncomment_lines "Gemfile", /gem 'unicorn'/
+uncomment_lines "Gemfile", /gem 'therubyracer'/
 comment_lines "Gemfile", /gem 'coffee-rails'/
 comment_lines "Gemfile", /gem 'sqlite/
 gem "foreman"
